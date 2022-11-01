@@ -8,9 +8,11 @@ namespace Session2
 {
     class Exam
     {
+        private string id;
         private string title;
         private DateTime openedAt;
         private int duration;
-        private List<Question> questions;
+        // each question mapped with its score
+        private Dictionary<Question, int> questions;
     }
 }
