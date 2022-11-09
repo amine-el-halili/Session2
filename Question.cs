@@ -2,7 +2,14 @@
 {
     abstract class Question
     {
-        private string id;
-        private string statement;
+        protected string id;
+        protected string statement
+        {
+            get;
+        }
+        protected int note
+        {
+            get;
+        }
     }
 }

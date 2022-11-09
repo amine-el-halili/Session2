@@ -2,15 +2,15 @@
 {
     class Suggestion
     {
-        private string _suggestion
+        private string suggestion
         {
-            get { return _suggestion; }
-            set { _suggestion = value; }
+            get;
+            set;
         }
-        private string percentage
+        private string coef
         {
-            get { return percentage; }
-            set { percentage = value; }
+            get;
+            set;
         }
     }
 }

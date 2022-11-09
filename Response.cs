@@ -3,14 +3,26 @@ namespace Session2
 {
     class Response
     {
-        private Question question;
-        // if mcq check numbers else the only first element will be checked
-        private ArrayList answer;
-        private Boolean isMcq;
-
-        public void addAnswer(Object ans)
+        private Question question
         {
-            answer.Add(ans);
+            get { return question; }
+        }
+        private int score;
+        private List<string> answers
+        {
+            get { return answers; }
+        }
+
+        void addAnswer(Object ans)
+        {
+            if (question is Mcq)
+            {
+                answers.Add(ans);
+            }
+            else
+            {
+                answers.Insert(0, ans);
+            }
         }
     }
 }

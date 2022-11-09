@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Session2
+﻿namespace Session2
 {
     class Exam
     {
@@ -12,7 +6,11 @@ namespace Session2
         private string title;
         private DateTime openedAt;
         private int duration;
-        // each question mapped with its score
-        private Dictionary<Question, int> questions;
+        private List<Question> questionsList;
+        public void addQuestion(Question question)
+        {
+            questionsList.Add(question);
+        }
+        
     }
 }

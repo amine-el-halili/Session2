@@ -3,7 +3,10 @@ namespace Session2
 {
     class Candidate
     {
-        private string name;
-        private string id;
+        private string name
+        {
+            get;
+            set;
+        }
     }
 }
