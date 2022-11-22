@@ -3,26 +3,14 @@ namespace Session2
 {
     class Response
     {
-        private Question question
-        {
-            get { return question; }
-        }
-        private int score;
-        private List<string> answers
-        {
-            get { return answers; }
-        }
+        private int id { get; set; }
+        private Question question { get; set; }
+        private float score { get; set; }
+        private List<string> answers;
 
-        void addAnswer(Object ans)
+        void addAnswer(string ans)
         {
-            if (question is Mcq)
-            {
-                answers.Add(ans);
-            }
-            else
-            {
-                answers.Insert(0, ans);
-            }
+            answers.Add(ans);
         }
     }
 }

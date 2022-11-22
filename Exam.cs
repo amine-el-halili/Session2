@@ -2,14 +2,14 @@
 {
     class Exam
     {
-        private string id;
-        private string title;
-        private DateTime openedAt;
-        private int duration;
-        private List<Question> questionsList;
+        private string id { get; set; }
+        private string title { get; set; }
+        private DateTime openedAt { get; set; }
+        private int duration { get; set; }
+        private List<Question> questions;
         public void addQuestion(Question question)
         {
-            questionsList.Add(question);
+            questions.Add(question);
         }
         
     }
