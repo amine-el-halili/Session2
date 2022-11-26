@@ -1,5 +1,4 @@
-﻿using System.Collections;
-namespace Session2
+﻿namespace Session2
 {
     class Response
     {
