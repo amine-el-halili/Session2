@@ -41,6 +41,34 @@ namespace Session2
                 error.Controls[0].Text = ex.Message;
                 error.Show();
             }
+        }
+
+        public static List<Candidate> getAll()
+        {
+            try
+            {
+                List<Candidate> list = new List<Candidate>();
+                Connection connection = Connection.getInstance(@"Data Source=ELHALILI\SQLEXPRESS;Initial Catalog=EXAMINATION;Integrated Security=True");
+                DataTable dt = connection.query("Select * from Candidat");
+                foreach (DataRow row in dt.Rows)
+                {
+                    string _name = row["NAME"].ToString();
+                    Candidate candidate = new Candidate(_name);
+                    candidate.Id = int.Parse(row["ID"].ToString());
+
+                    list.Add(candidate);
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                ErrorForm error = new ErrorForm();
+                error.Controls[0].Text = ex.Message;
+                error.Show();
+
+                return null;
+            }
 
         }
     }
