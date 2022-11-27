@@ -43,9 +43,6 @@
             this.Name = "ExaminationForm";
             this.Text = "Initial";
             this.ResumeLayout(false);
-            this.exam = new Exam();
-            exam.save();
-
         }
         #endregion
 
@@ -53,5 +50,6 @@
         {
 
         }
+
     }
 }
