@@ -71,5 +71,28 @@ namespace Session2
             }
 
         }
+
+        public static Candidate getById(int _id)
+        {
+            try
+            {
+                Connection connection = Connection.getInstance(@"Data Source=ELHALILI\SQLEXPRESS;Initial Catalog=EXAMINATION;Integrated Security=True");
+                DataTable dt = connection.query("Select * from Candidat Where ID = " + _id.ToString());
+
+                Candidate candidate = new Candidate(dt.Rows[0]["NAME"].ToString());
+                candidate.Id = int.Parse(dt.Rows[0]["ID"].ToString());
+
+                return candidate;
+            }
+            catch (Exception ex)
+            {
+                ErrorForm error = new ErrorForm();
+                error.Controls[0].Text = ex.Message;
+                error.Show();
+
+                return null;
+            }
+        }
+
     }
 }
