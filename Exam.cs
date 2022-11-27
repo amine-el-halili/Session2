@@ -13,5 +13,24 @@
             questions.Add(question);
         }
         
+        // save an exam at database (persistence)
+        public bool save()
+        {
+            try
+            {
+                throw new NotImplementedException();
+
+            } catch (Exception ex)
+            {
+                var pop = new Form();
+                pop.Text = "Error";
+                pop.BackColor = Color.Red;
+                var label = new Label();
+                label.Text = ex.Message;
+                pop.Controls.Add(label);
+                pop.Show();
+                return false;
+            }
+        }
     }
 }

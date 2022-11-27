@@ -2,6 +2,10 @@
 {
     partial class ExaminationForm
     {
+        private List<Exam> exams;
+        private Exam exam;
+        private List<Question> questions;
+        private List<Suggestion> suggestions;
 
         /// <summary>
         /// Required designer variable.
@@ -37,11 +41,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ExaminationForm";
-            this.Text = "Exam generator";
+            this.Text = "Initial";
             this.ResumeLayout(false);
+            this.exam = new Exam();
+            exam.save();
 
         }
-
         #endregion
+
+        private void initial_state()
+        {
+
+        }
     }
 }
