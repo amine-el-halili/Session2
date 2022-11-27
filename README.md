@@ -5,3 +5,6 @@
 
 ## State machine diagram
 ![image](https://user-images.githubusercontent.com/116503971/204131349-0cc29c23-70b5-434e-8888-9de79028219b.png)
+
+## Entity-relationship diagram
+![image](https://user-images.githubusercontent.com/116503971/204132041-3bf5082a-9b88-4fe7-94c6-79e291b075ac.png)
