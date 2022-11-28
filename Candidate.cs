@@ -20,7 +20,7 @@ namespace Session2
         {
             this.name = name;
         }
-        public void save()
+        public Candidate save()
         {
             try
             {
@@ -33,13 +33,18 @@ namespace Session2
                 }
                 else
                 {
-                    connection.query("INSERT INTO CANDIDAT (NAME) VALUES ('" + name + "');");
+                    DataTable id_table = connection.query("INSERT INTO CANDIDAT (NAME) VALUES ('" + name + "'); SELECT SCOPE_IDENTITY() as ID");
+                    id = int.Parse(id_table.Rows[0]["ID"].ToString());
                 }
+
+                return this;
             } catch (Exception ex)
             {
                 ErrorForm error = new ErrorForm();
                 error.Controls[0].Text = ex.Message;
                 error.Show();
+
+                return null;
             }
         }
 
@@ -78,6 +83,9 @@ namespace Session2
             {
                 Connection connection = Connection.getInstance(@"Data Source=ELHALILI\SQLEXPRESS;Initial Catalog=EXAMINATION;Integrated Security=True");
                 DataTable dt = connection.query("Select * from Candidat Where ID = " + _id.ToString());
+
+                if (dt.Rows.Count == 0) return null;
+
 
                 Candidate candidate = new Candidate(dt.Rows[0]["NAME"].ToString());
                 candidate.Id = int.Parse(dt.Rows[0]["ID"].ToString());
